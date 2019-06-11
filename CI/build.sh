@@ -5,5 +5,7 @@ if [[ ! -d "/root/obs-gstreamer" ]]; then
     cloned=true
 fi
 cd /root/obs-gstreamer
+rm -R linux
+ninja clean
 CFLAGS=-DOLD_OBS_API meson --buildtype release linux
 ninja -C linux
